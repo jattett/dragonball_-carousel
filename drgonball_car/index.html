@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="https://mblogthumb-phinf.pstatic.net/20160102_180/bluespring1313_14517208258270NUSK_PNG/3.png?type=w2" alt="">
+        <h1>내가 좋아하는 드래곤볼 캐릭터</h1>
+    </div>
+
+    <article id="app">
+        
+        <ul class="list-item">
+            <li><img id="one-img" src="/img/오지터.png" alt="오지터"></li>
+            <li><img id="two-img"  src="/img/베지트.png" alt="베지트"></li>
+            <li><img id="three-img"src="/img/오천크스노말.png" alt="오천크스">
+            </li>
+            <li><img id="four-img" src="/img/브로리.png" alt="브로리"></li>
+            <li><img id="five-img"src="https://obj-sg.thewiki.kr/data/44424620ec98a4ebb09828ecb2adeb8584eab8b0292e706e67.png" alt="손오반"></li>
+            <li><img id="six-img"src="./img/노말베지터.png" alt="베지터"></li>
+            <li><img id="seven-img" src="https://obj-sg.thewiki.kr/data/eb939cebb3bced8c8c5feab384ec9995eab68c5fec98a4eab3b52e706e67.png" alt="손오공"></li>
+        </ul>
+
+    </article>
+
+    
+
+    <p>내가 가장좋아하는 캐릭터를 선택 후 4성구을 눌러보세요(소리주의!!)</p>
+    <div class="list-btn">    
+        <button class="left-btn"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
+        <button class="select-btn" onclick="toggleImg(); play() "><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
+        <audio id="audio" src="audio.mp3"></audio>
+        <button class="right-btn"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
+        </div>
+
+    <div class="bgm-box">
+        <iframe  width="560" height="315" src="https://www.youtube.com/embed/84UJvHNfmSk?autoplay=1" &mute=1 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        
+    </div>
+
+    <script>
+        const center = document.querySelector('.list-item');
+        const items = document.querySelectorAll('.list-item li');
+        const angle = 360 / items.length;
+        const oneImg = document.querySelector('#one-img')
+        
+        let currAngle = 0;
+
+
+        
+        
+
+        // 셀렉트버튼 (이미지변환)
+        function toggleImg() {
+        document.getElementById("one-img").src = "./img/초사이언4오지터.png";
+        document.getElementById("two-img").src = "./img/블루베지트.png";
+        document.getElementById("three-img").src = "./img/오천크스_초사.png";
+        document.getElementById("four-img").src = "./img/브로리초싸이언.png";
+        document.getElementById("five-img").src = "./img/초싸손오반.png";
+        document.getElementById("six-img").src = "./img/베지터초사이언.png";
+        document.getElementById("seven-img").src = "./img/손오공초사이언3.png";
+    }
+
+        //셀렉트버튼 누를시 효과음
+        function play(){
+            let audio = document.getElementById("audio");
+            audio.play();
+        }
+
+        
+        
+
+        // 왼쪽버튼      
+            document.querySelector('.left-btn').addEventListener('click',()=>{
+        
+            currAngle += angle;
+            center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        });
+        // 오른쪽 버튼
+        document.querySelector('.right-btn').addEventListener('click',()=>{
+            currAngle -= angle;
+            center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        });
+        
+
+    </script>
+
+
+</body>
+
+</html>
