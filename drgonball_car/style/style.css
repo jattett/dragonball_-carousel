@@ -52,6 +52,7 @@ body {
     backface-visibility: hidden;
 }
 
+
 .list-item li img {
     object-fit: contain;
     width: 100%;
@@ -91,7 +92,6 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 
