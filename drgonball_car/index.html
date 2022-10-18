@@ -13,7 +13,7 @@
 <body>
     <div class="header">
         <img src="https://mblogthumb-phinf.pstatic.net/20160102_180/bluespring1313_14517208258270NUSK_PNG/3.png?type=w2" alt="">
-        <h1>내가 좋아하는 드래곤볼 캐릭터</h1>
+        <h1>내가 좋아하는 <img src="https://w.namu.la/s/aa990ddc5b2d3410e26e456e8376dff50c16764268e7eda39d9e0ca97bbf0692ef9e05f492ce648c53ac17c871e84c547e906a7b5e952d2da11f25f6e2eb51ebd8a7d74895db57d75c6d2539520d10ace502233db2d1ba2da9186949eeca99b6" alt=""> 캐릭터</h1>
     </div>
 
     <article id="app">
@@ -35,10 +35,10 @@
 
     <p>내가 가장좋아하는 캐릭터를 선택 후 4성구을 눌러보세요(소리주의!!)</p>
     <div class="list-btn">    
-        <button class="left-btn"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
-        <button id="select-btn" onclick="play();"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
-        <audio id="audio" src="audio.mp3"></audio>
-        <button class="right-btn"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
+        <button id="left-btn"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
+        <button id="select-btn" onclick="play()"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
+        <button id="right-btn"><img src="https://mblogthumb-phinf.pstatic.net/20150407_236/zjalxm_1428374477388scwkK_PNG/15168-dragon-ball-z-dragon-ball-z-fanclub-logo-1_zpsde02841d.png?type=w2" alt=""></button>
+        <audio id="audio" src="abc.mp3"></audio>
         </div>
 
     <div class="bgm-box">
@@ -64,7 +64,6 @@
         document.getElementById("six-img").src = "./img/베지터초사이언.png";
         document.getElementById("seven-img").src = "./img/손오공초사이언3.png";  
         }	
-  
 
 
         
@@ -73,15 +72,17 @@
                 let audio = document.getElementById("audio");
             audio.play();
         }
+
+
         
         // 왼쪽버튼      
-        document.querySelector('.left-btn').addEventListener('click',()=>{
+        document.querySelector('#left-btn').addEventListener('click',()=>{
             
             currAngle += angle;
             center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
         });
         // 오른쪽 버튼
-        document.querySelector('.right-btn').addEventListener('click',()=>{
+        document.querySelector('#right-btn').addEventListener('click',()=>{
             currAngle -= angle;
             center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
         });

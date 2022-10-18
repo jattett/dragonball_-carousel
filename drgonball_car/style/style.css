@@ -13,9 +13,14 @@ body {
 }
 
 .header h1 {
-    color: white;
+    color: green;
     font-size: 90px;
     position: relative;
+    text-shadow: 2px 2px 2px black;
+}
+
+.header h1 img{
+    vertical-align: bottom;
 }
 
 
@@ -86,6 +91,7 @@ p{
    font-size: 30px;
    color: yellow;
    font-weight: bold;
+   text-shadow: 2px 2px 2px black;
 }
 
 .bgm-box{
